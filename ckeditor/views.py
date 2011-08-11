@@ -5,7 +5,9 @@ from django.conf import settings
 from django.http import HttpResponse
 from django.shortcuts import render_to_response
 from django.template import RequestContext
-            
+from django.template.defaultfilters import slugify
+from pytils.translit import translify
+
 try: 
     from PIL import Image, ImageOps 
 except ImportError: 
@@ -27,7 +29,11 @@ def get_available_name(name):
     available for new content to be written to.
     """
     dir_name, file_name = os.path.split(name)
+    file_name = slugify(translify(file_name.decode('utf8')))
     file_root, file_ext = os.path.splitext(file_name)
+    
+    name = os.path.join(dir_name, file_name)
+
     # If the filename already exists, keep adding an underscore (before the
     # file extension, if one exists) to the filename until the generated
     # filename doesn't exist.
