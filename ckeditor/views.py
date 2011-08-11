@@ -29,10 +29,10 @@ def get_available_name(name):
     available for new content to be written to.
     """
     dir_name, file_name = os.path.split(name)
-    file_name = slugify(translify(file_name.decode('utf8')))
     file_root, file_ext = os.path.splitext(file_name)
+    file_root = slugify(translify(file_root))
     
-    name = os.path.join(dir_name, file_name)
+    name = os.path.join(dir_name, file_root + file_ext)
 
     # If the filename already exists, keep adding an underscore (before the
     # file extension, if one exists) to the filename until the generated
