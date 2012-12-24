@@ -119,7 +119,7 @@ def upload(request):
 
     try:
         create_thumbnail(upload_filename)
-    except IOError:
+    except (IOError, KeyError): #for non-images
         pass
 
     # Respond with Javascript sending ckeditor upload url.
