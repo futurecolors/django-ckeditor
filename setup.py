@@ -1,22 +1,23 @@
 from setuptools import setup, find_packages
 
 setup(
-    name='django-ckeditor',
-    version='0.1.0',
+    name='django-ckeditor-fc',
+    version='1.0',
     description='Django admin CKEditor integration.',
-    long_description = open('README.rst', 'r').read() + open('AUTHORS.rst', 'r').read() + open('CHANGELOG.rst', 'r').read(),
+    long_description=open('README.rst', 'r').read() + open('AUTHORS.rst', 'r').read() + open('CHANGELOG.rst',
+                                                                                             'r').read(),
     author='Future Colors (orginal author:Shaun Sephton)',
     author_email='shaunsephton@gmail.com',
-    url='http://github.com/shaunsephton/django-ckeditor',
-    packages = find_packages(),
-    dependency_links = [
+    url='https://github.com/futurecolors/django-ckeditor',
+    packages=find_packages(),
+    dependency_links=[
         'http://dist.plone.org/thirdparty/',
     ],
-    install_requires = [
+    install_requires=[
         'PIL', 'pytils'
     ],
     include_package_data=True,
-    classifiers = [
+    classifiers=[
         "Programming Language :: Python",
         "License :: OSI Approved :: BSD License",
         "Development Status :: 4 - Beta",
