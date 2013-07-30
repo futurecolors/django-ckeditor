@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 setup(
     name='django-ckeditor-fc',
-    version='1.0',
+    version='1.1',
     description='Django admin CKEditor integration.',
     long_description=open('README.rst', 'r').read() + open('AUTHORS.rst', 'r').read() + open('CHANGELOG.rst',
                                                                                              'r').read(),
@@ -14,7 +14,7 @@ setup(
         'http://dist.plone.org/thirdparty/',
     ],
     install_requires=[
-        'PIL', 'pytils'
+        'Pillow', 'pytils'
     ],
     include_package_data=True,
     classifiers=[
